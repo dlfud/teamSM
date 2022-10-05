@@ -10,4 +10,6 @@ router.get("/read", contrller.findAll);
 
 router.post("/create", contrller.create);
 
+router.post("/update", contrller.update);
+
 module.exports = router;

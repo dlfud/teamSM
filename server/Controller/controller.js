@@ -26,3 +26,11 @@ exports.findAll = (req, res) => {
   res.send(rows);
  });
 };
+
+// 수정 (U)
+exports.update = (req, res) => {
+ db.query(`UPDATE ${table} SET title = \"${req.body.title}\" , content = \"${req.body.content}\" WHERE id = ${req.body.id}`, (err, rows) => {
+  if (err) throw err;
+  res.send("success");
+ });
+};
