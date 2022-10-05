@@ -10,6 +10,8 @@ router.get("/read", contrller.findAll);
 
 router.post("/create", contrller.create);
 
-router.post("/update", contrller.update);
+router.patch("/update", contrller.update);
+
+router.delete("/delete", contrller.delete);
 
 module.exports = router;

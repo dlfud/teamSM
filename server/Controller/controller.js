@@ -1,5 +1,6 @@
 const db = require("../config/database.js");
 
+// 컨트롤러 프레임 워크
 /*
 exports.이름 = (req, res) => {
   db.query(``, (err, rows) => {
@@ -12,8 +13,7 @@ const table = "secretPost";
 
 // 생성 (C)
 exports.create = (req, res) => {
- console.log("!!!!!!!", req.body);
- db.query(`INSERT INTO ${table} SET title = \"${req.body.title}\" , content = \"${req.body.content}\"`, (err) => {
+ db.query(`INSERT INTO ${table} SET title = \"${req.body.title}\" , content = \"${req.body.content}\";`, (err) => {
   if (err) throw err;
   res.send("success");
  });
@@ -21,7 +21,7 @@ exports.create = (req, res) => {
 
 // 전체 조회 (R)
 exports.findAll = (req, res) => {
- db.query(`SELECT * FROM ${table}`, (err, rows) => {
+ db.query(`SELECT * FROM ${table};`, (err, rows) => {
   if (err) throw err;
   res.send(rows);
  });
@@ -29,7 +29,15 @@ exports.findAll = (req, res) => {
 
 // 수정 (U)
 exports.update = (req, res) => {
- db.query(`UPDATE ${table} SET title = \"${req.body.title}\" , content = \"${req.body.content}\" WHERE id = ${req.body.id}`, (err, rows) => {
+ db.query(`UPDATE ${table} SET title = \"${req.body.title}\" , content = \"${req.body.content}\" WHERE id = ${req.body.id};`, (err, rows) => {
+  if (err) throw err;
+  res.send("success");
+ });
+};
+
+// 삭제 (D)
+exports.delete = (req, res) => {
+ db.query(`DELETE FROM ${table} WHERE id =${req.body.id};`, (err, rows) => {
   if (err) throw err;
   res.send("success");
  });

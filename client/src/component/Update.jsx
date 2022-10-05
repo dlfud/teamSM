@@ -13,7 +13,7 @@ const Update = () => {
   e.preventDefault();
   const doCreate = await axios({
    url: `http://localhost:5000/update`,
-   method: "POST",
+   method: "patch",
    data: {
     id,
     title,
