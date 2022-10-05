@@ -1,11 +1,19 @@
 const express = require("express");
 const app = express();
 const path = require("./Router/path");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
-app.all("/*", function (req, res, next) {
- res.header("Access-Control-Allow-Origin", "http://localhost:3000");
- next();
-});
+// cors문제 해결 => 리액트만 연결됨
+const corsOptions = {
+ origin: `http://localhost:3000`,
+ credential: true, // 쿠키 세션에 접근
+};
+
+app.use(cors(corsOptions));
+
+// 받은 데이터를 Json 형태로 만듬
+app.use(bodyParser.json());
 
 app.use("/", path);
 

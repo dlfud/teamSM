@@ -1,16 +1,13 @@
 const express = require("express");
-const db = require("../config/database.js");
 const router = express.Router();
+const contrller = require("../Controller/controller.js");
 
 router.get("/test", (req, res) => {
  res.send({ test: "hi" });
 });
 
-router.get("/read", (req, res) => {
- db.query(`SELECT * FROM secretPost`, (err, rows) => {
-  if (err) throw err;
-  res.send(rows);
- });
-});
+router.get("/read", contrller.findAll);
+
+router.post("/create", contrller.create);
 
 module.exports = router;

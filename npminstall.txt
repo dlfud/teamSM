@@ -1,10 +1,13 @@
+# 라우터 요청
+https://luckyyowu.tistory.com/346
+
 # express (server)
 npm i express
 
-# nodemone : 파일을 변경할 때 마다 바로바로 업데이트 (server)
+# nodemone (server) : 파일을 변경할 때 마다 바로바로 업데이트
 npm i nodemon --save
 
-# concurrently : react 서버와 node 서버를 동시에 실행시키기 위한 모듈 (server)
+# concurrently (server): react 서버와 node 서버를 동시에 실행시키기 위한 모듈 
 npm i concurrently --save
 
 # axios : 통신수단 (client)
@@ -15,3 +18,7 @@ npm i mysql
 
 # react-router-dom (client)
 npm i react-router-dom
+
+# cors (sever) : cors 문제 해결
+npm i cors
+
