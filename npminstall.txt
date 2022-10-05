@@ -12,3 +12,6 @@ npm i http-proxy-middleware
 
 # axios : 통신수단
 npm i axios
+
+# mysql
+npm i mysql
