@@ -1,0 +1,14 @@
+# express
+npm i express
+
+# nodemone : 파일을 변경할 때 마다 바로바로 업데이트
+npm i nodemon --save
+
+# concurrently : react 서버와 node 서버를 동시에 실행시키기 위한 모듈
+npm i concurrently --save
+
+# proxy : 클라이언트와 서버 사이의 네트워크 통신
+npm i http-proxy-middleware
+
+# axios : 통신수단
+npm i axios
