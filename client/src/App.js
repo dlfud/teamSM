@@ -1,22 +1,15 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Read from "./component/Read.jsx";
 
 function App() {
-  const [test, setTest] = useState("");
-
-  useEffect(() => {
-    const doTest = async () => {
-      const testData = await axios({
-        url: `http://localhost:5000/api`,
-        method: "GET",
-      });
-      setTest(testData.data);
-    };
-    doTest();
-  });
-
-  return <div className="App">{test.test}</div>;
+ return (
+  <Router>
+   <Routes>
+    <Route path="/read" element={<Read />}></Route>
+   </Routes>
+  </Router>
+ );
 }
 
 export default App;
